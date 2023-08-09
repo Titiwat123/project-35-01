@@ -134,7 +134,7 @@
             <img src="{{asset('Template/images/faces/face28.png')}}">
           </div>
           <div class="user-name">
-              Edward Spencer
+          {{ Auth::user()->name }}
           </div>
           <div class="user-designation">
               Developer
