@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\TypeproductController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +32,23 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// เมนูผู้ใช้
+Route::get('/admin/user/index',[UserController::class, 'index'])->name('u.index');
+
+
+
+// ประเภทสินค้า
+Route::get('/admin/typeproduct/index',[TypeproductController::class, 'index'])->name('t.index');
+Route::get('admin/typeproduct/create', [TypeproductController::class, 'create']);
+Route::post('admin/typeproduct/insert',[TypeproductController::class,'insert'] );
+Route::get('admin/typeproduct/edit/{id}',[TypeproductController::class, 'edit']);
+Route::post('admin/typeproduct/update/{id}',[TypeproductController::class, 'update']);
+Route::get('admin/typeproduct/delete/{id}', [TypeproductController::class, 'delete']);
+
+
+
+
+// สินค้า
+Route::get('/admin/product/index',[ProductController::class, 'index'])->name('p.index');
+Route::get('admin/product/create',[ProductController::class, 'create']);
