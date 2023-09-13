@@ -52,3 +52,6 @@ Route::get('admin/typeproduct/delete/{id}', [TypeproductController::class, 'dele
 // สินค้า
 Route::get('/admin/product/index',[ProductController::class, 'index'])->name('p.index');
 Route::get('admin/product/create',[ProductController::class, 'create']);
+Route::post('admin/product/insert',[ProductController::class, 'insert']);
+Route::get('admin/product/delete/{id}',[ProductController::class, 'delete']);
+Route::get('admin/product/edit/{id}',[ProductController::class, 'edit']);

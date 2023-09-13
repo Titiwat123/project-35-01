@@ -21,17 +21,23 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ( $product as $pro)
+
                         <tr>
-                          <td>Jacob</td>
-                          <td>Photoshop</td>
-                          <td>Photoshop</td>
-                          <td>Photoshop</td>
-                          <td>Photoshop</td>
+                          <td>{{ $pro->product_id}}</td>
+                          <td>{{ $pro->name}}</td>
                           <td>
-                            <a href="" class="btn btn-warning">แก้ไข</a>
-                            <a href="" class="btn btn-danger">ลบ</a>
+                            <img src=" {{asset('Template/product/image/'.$pro->image)}}" width="250px" alt="">
+                          </td>
+                          <td>{{ $pro->price}}</td>
+                          <td>{{ $pro->typeproduct_id}}</td>
+                          <td> 
+                            
+                            <a href="{{ url('admin/product/edit/'.$pro->product_id) }}" class="btn btn-warning">แก้ไข</a>
+                            <a href="{{ url('admin/product/delete/'.$pro->product_id) }}" class="btn btn-danger">ลบ</a>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

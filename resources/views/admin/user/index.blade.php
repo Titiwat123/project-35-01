@@ -1,6 +1,6 @@
 @extends('layouts.masterbackend')
 @section('content')
-<div class="col-lg-10w   grid-margin stretch-card">
+<div class="col-lg-10   grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">ผู้ใช้งาน</h4>
